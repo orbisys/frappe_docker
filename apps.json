@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://github.com/frappe/erpnext",
+    "branch": "develop"
+  },
+  {
+    "url": "https://github.com/frappe/crm",
+    "branch": "develop"
+  },
+  {
+    "url": "https://github.com/frappe/helpdesk",
+    "branch": "develop"
+  },
+  {
+    "url": "https://techstr:<>@github.com/orbisys/fleeter",
+    "branch": "develop"
+  }
+]
