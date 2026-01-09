@@ -32,6 +32,8 @@ RUN export APP_INSTALL_ARGS="" && \
 
 FROM frappe/base:${FRAPPE_BRANCH} AS backend
 
+COPY resources/nginx-template.conf /templates/nginx/frappe.conf.template
+
 USER frappe
 
 COPY --from=builder --chown=frappe:frappe /home/frappe/frappe-bench /home/frappe/frappe-bench
@@ -48,6 +50,7 @@ CMD [ \
   "/home/frappe/frappe-bench/env/bin/gunicorn", \
   "--chdir=/home/frappe/frappe-bench/sites", \
   "--bind=0.0.0.0:8000", \
+  "--bind=[::]:8000", \
   "--threads=4", \
   "--workers=2", \
   "--worker-class=gthread", \
